@@ -258,4 +258,4 @@ SCAN - одно байтный код. Младшие 7 битов являют�
 
 Схема клавиатуры (упрощённая)
 
-![Схема клавиатуры Image](/home/timur/College/session/winter_2019/architecture/keyboard_scheme.jpg)
+![Схема клавиатуры Image](./architecture/keyboard_scheme.jpg)
