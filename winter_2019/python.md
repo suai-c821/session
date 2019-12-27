@@ -144,8 +144,38 @@ integer = int(input('Enter some int: '))  # int нужен для перевод
 
 Правила присваивания(связывания имён со значениями):
 
-- Создание переменной происходит при использовании оператора `=`, `import`, `import-as` или в конструкциях `with`, `for`, `try-except-as`
+- Создание переменной происходит при использовании оператора `=`, `import`, `import as` или в конструкциях `with`, `for`, `try-except as`
 - Переменная должна быть создана до её использования, иначе будет ошибка NameError 
+
+## № 12 (Реализация в Python основных алгоритмических конструкций.)
+
+Вложенные конструкции должны иметь одинаковый отступ, обычно 4 пробела (PEP 8).
+
+- `if-elif-else` условный оператор
+
+  ```python
+  a = 2
+  if a == 0: 
+  	print('zero')
+  elif a == 1:
+      print('one')
+  else:
+      print('something else')
+  ```
+
+- `for` цикл с параметром
+
+  ```python
+  for i in [0, 1, 2]:
+  	print(i)
+  ```
+
+- `while` цикл с предусловием
+
+  ```python
+  while True:
+  	print('infinity')
+  ```
 
 ## №13 (Назначение и применение операторов *continue*, *break*.)
 
@@ -192,6 +222,37 @@ multiply = lambda a, b : a * b
 print(add(3, 2))  # Output: 5
 print(multiply(3, 2))  # Output: 6
 ```
+
+## № 15 (Использование механизма исключений. Иерархия исключений.)
+
+Для перехвата исключений есть `try-except`.
+
+```python
+# try-except со всеми 
+try:
+    a = 1 + True
+except TypeError:
+    print('TypeError(')
+except SyntaxError:
+    print('SyntaxError(')
+else:
+    print('All is OK. There\'s gonna be 2')
+finally:
+    print('There\'s no error')
+```
+
+Встроенные исключения (не все):
+
+- Exception - родитель всех исключений
+- ZeroDivisionError
+- FloatingPointError
+- AssertionError
+- EOFError
+- ImportError
+- KeyboardInterrupt
+- NameError
+- TypeError
+- UnicodeError
 
 ## №47 (Понятие оптимизации программного кода, её основные принципы.)
 
@@ -250,7 +311,7 @@ print(multiply(3, 2))  # Output: 6
 
 >  Профилирование - сбор характеристики работы программы с целью их дальнейшей оптимизации
 
-1. profile
+1. profile - модуль для профилирования кода
 
    Для профилирование требуется запустить функцию или часть кода через `profile.run()`
 
@@ -269,7 +330,7 @@ print(multiply(3, 2))  # Output: 6
    - percall – это cumtime деленный на примитивные вызовы
    - filename:lineno(function) – данные о каждой функции
 
-2. pstats
+2. pstats - для сортировки отчёта из модуля profile
 
    Скрипт выводит таблицу для пяти самых затратных по времени работы (без учета дочерних вызовов) функций.
 
@@ -284,9 +345,7 @@ print(multiply(3, 2))  # Output: 6
    stats.print_stats(5)
    ```
 
-   
-
-3. timeit
+3. timeit - библиотека для измерения времени запуска программы или модуля.
 
    Запускает программу 10000 раз и показывает время самого быстрого результата
 
